@@ -6,7 +6,7 @@ import { getRepository } from 'typeorm';
 export async function getTokenByIdAction(id: number) {
   const account = await getRepository(Account).findOne({ id });
 
-  const accessToken = jwt.sign({ id: account.id, permissions: account.permissions }, JWT_SECRET, { expiresIn: JWT_EXPIRE });
+  const accessToken = jwt.sign({ id: account.id, permissions: account.permissions, name: account.name }, JWT_SECRET, { expiresIn: JWT_EXPIRE });
 
   return accessToken;
 }

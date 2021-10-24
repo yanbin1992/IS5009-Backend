@@ -3,6 +3,7 @@ declare namespace Express {
     user?: {
       id: number;
       permissions: string[];
+      name: string;
       iat: number;
       exp: number;
     };
