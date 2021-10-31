@@ -16,6 +16,21 @@ export class Account extends CommonEntity {
   @Column('text')
   public password: string;
 
+  @Column('json')
+  public level: {
+    income: number,
+    experience: number,
+    risk: number
+  }
+
+  @Column('json')
+  public accountData: {
+    balance: number,
+    base: number,
+    rewards: number,
+    certificate: number,
+  }
+
   @OneToMany(
     type => Post,
     post => post.account,
