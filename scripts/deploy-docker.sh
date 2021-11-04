@@ -6,8 +6,8 @@ npm run build
 cp .env.example .env
 
 # Push the generated image to the registry
-docker-compose -f docker-compose-test.yml build
-docker-compose -f docker-compose-test.yml push
+sudo docker-compose -f docker-compose-test.yml build
+sudo docker-compose -f docker-compose-test.yml up
 
 # To remove docker-compose service
 # docker stack rm express_ts
@@ -15,4 +15,4 @@ docker-compose -f docker-compose-test.yml push
 # docker-compose -f docker-compose-test.yml rm 
 
 # Remove unused Data
-docker system prune -f
+# sudo docker system prune -f
